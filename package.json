@@ -1,0 +1,32 @@
+{
+  "name": "bs58check",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "devDependencies": {
+    "browserify": "~4.1.5",
+    "jshint": "2.5.1",
+    "mocha": "1.18.2"
+  },
+  "testling": {
+    "browsers": [
+      "android-browser/4.2..latest",
+      "chrome/20..latest",
+      "firefox/21..latest",
+      "ipad/6..latest",
+      "iphone/6..latest",
+      "opera/15..latest",
+      "safari/latest"
+    ],
+    "harness": "mocha-bdd",
+    "files": "test/*.js"
+  },
+  "scripts": {
+    "jshint": "./node_modules/.bin/jshint --config jshint.json src/*.js ; true",
+    "test": "npm run-script unit",
+    "unit": "./node_modules/.bin/_mocha test/*.js"
+  },
+  "dependencies": {
+    "bs58": "1.1.0"
+  }
+}
