@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "browserify": "~4.1.5",
+    "coveralls": "~2.10.0",
+    "istanbul": "0.1.30",
     "jshint": "2.5.1",
     "mocha": "1.18.2"
   },
@@ -37,9 +39,11 @@
     "files": "test/*.js"
   },
   "scripts": {
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js",
+    "coveralls": "npm run-script coverage && node ./node_modules/.bin/coveralls < coverage/lcov.info",
     "jshint": "./node_modules/.bin/jshint --config jshint.json src/*.js ; true",
     "test": "npm run-script unit",
-    "unit": "./node_modules/.bin/_mocha test/*.js"
+    "unit": "./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- --reporter list test/*.js"
   },
   "dependencies": {
     "bs58": "1.1.0"
