@@ -1,7 +1,7 @@
 {
   "name": "bs58check",
   "version": "1.0.0",
-  "description": "",
+  "description": "A straightforward implementation of base58-check encoding",
   "keywords": [
     "base58",
     "base58check",
@@ -19,11 +19,11 @@
     "type": "git"
   },
   "devDependencies": {
-    "browserify": "~4.1.5",
-    "coveralls": "~2.10.0",
-    "istanbul": "0.1.30",
-    "jshint": "2.5.1",
-    "mocha": "1.18.2"
+    "browserify": "^4.2.0",
+    "coveralls": "^2.10.1",
+    "istanbul": "^0.2.13",
+    "jshint": "^2.5.1",
+    "mocha": "^1.20.1"
   },
   "testling": {
     "browsers": [
