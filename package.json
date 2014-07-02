@@ -2,7 +2,22 @@
   "name": "bs58check",
   "version": "1.0.0",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "base58",
+    "base58check",
+    "bitcoin",
+    "bs58",
+    "decode",
+    "decoding",
+    "encode",
+    "encoding",
+    "litecoin"
+  ],
+  "main": "./src/bs58check.js",
+  "repository": {
+    "url": "http://github.com/dcousens/bs58check",
+    "type": "git"
+  },
   "devDependencies": {
     "browserify": "~4.1.5",
     "jshint": "2.5.1",
