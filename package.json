@@ -45,6 +45,6 @@
     "unit": "./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- --reporter list test/*.js"
   },
   "dependencies": {
-    "bs58": "^1.2.1"
+    "bs58": "^2.0.0"
   }
 }

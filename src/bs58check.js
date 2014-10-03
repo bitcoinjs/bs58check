@@ -22,7 +22,7 @@ function encode(payload) {
 
 // Decode a base58-check encoded string to a buffer
 function decode(string) {
-  var buffer = base58.decode(string)
+  var buffer = new Buffer(base58.decode(string))
 
   var payload = buffer.slice(0, -4)
   var checksum = buffer.slice(-4)
