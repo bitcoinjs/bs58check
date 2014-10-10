@@ -19,9 +19,9 @@
     "type": "git"
   },
   "devDependencies": {
-    "coveralls": "^2.10.1",
-    "istanbul": "^0.2.16",
-    "mocha": "^1.20.1"
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.2",
+    "mocha": "^1.21.4"
   },
   "testling": {
     "browsers": [
@@ -37,10 +37,9 @@
     "files": "test/*.js"
   },
   "scripts": {
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js",
-    "coveralls": "npm run-script coverage && node ./node_modules/.bin/coveralls < coverage/lcov.info",
-    "test": "npm run-script unit",
-    "unit": "./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- --reporter list test/*.js"
+    "coverage": "istanbul cover _mocha -- test/*.js",
+    "coveralls": "npm run coverage && coveralls < coverage/lcov.info",
+    "test": "istanbul test mocha -- --reporter list test/*.js"
   },
   "dependencies": {
     "bs58": "^2.0.0"
