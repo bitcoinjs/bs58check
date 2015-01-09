@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
-    "istanbul": "^0.3.2",
-    "mocha": "^1.21.4"
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0"
   },
   "testling": {
     "browsers": [
@@ -42,6 +42,6 @@
     "test": "istanbul test mocha -- --reporter list test/*.js"
   },
   "dependencies": {
-    "bs58": "^2.0.0"
+    "bs58": "^2.0.1"
   }
 }
