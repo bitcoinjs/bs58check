@@ -1,13 +1,12 @@
 'use strict';
 
-var assert = require('assert')
 var base58 = require('bs58')
-var crypto = require('crypto')
+var createHash = require('create-hash')
 
 // SHA256(SHA256(buffer))
 function sha256x2(buffer) {
-  buffer = crypto.createHash('sha256').update(buffer).digest()
-  return crypto.createHash('sha256').update(buffer).digest()
+  buffer = createHash('sha256').update(buffer).digest()
+  return createHash('sha256').update(buffer).digest()
 }
 
 // Encode a buffer as a base58-check encoded string
@@ -28,7 +27,11 @@ function decode(string) {
   var checksum = buffer.slice(-4)
   var newChecksum = sha256x2(payload).slice(0, 4)
 
-  assert.deepEqual(newChecksum, checksum, 'Invalid checksum')
+  if (!Array.prototype.every.call(newChecksum, function(x, i) {
+    return x === checksum[i]
+  })) {
+    throw new Error('Invalid checksum')
+  }
 
   return payload
 }

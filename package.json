@@ -32,6 +32,7 @@
     "test": "istanbul test mocha -- --reporter list test/*.js"
   },
   "dependencies": {
-    "bs58": "^2.0.1"
+    "bs58": "^2.0.1",
+    "create-hash": "^1.1.0"
   }
 }
