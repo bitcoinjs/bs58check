@@ -1,5 +1,5 @@
 var assert = require('assert')
-var base58check = require('../src/bs58check')
+var base58check = require('../')
 
 var fixtures = require('./fixtures')
 

@@ -13,28 +13,18 @@
     "encoding",
     "litecoin"
   ],
-  "main": "./src/bs58check.js",
+  "main": "index.js",
   "repository": {
-    "url": "http://github.com/dcousens/bs58check",
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/dcousens/bs58check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dcousens/bs58check/issues"
   },
   "devDependencies": {
-    "coveralls": "^2.11.2",
+    "coveralls": "^2.11.0",
     "istanbul": "^0.3.5",
-    "mocha": "^2.1.0"
-  },
-  "testling": {
-    "browsers": [
-      "android-browser/4.2..latest",
-      "chrome/20..latest",
-      "firefox/21..latest",
-      "ipad/6..latest",
-      "iphone/6..latest",
-      "opera/15..latest",
-      "safari/latest"
-    ],
-    "harness": "mocha-bdd",
-    "files": "test/*.js"
+    "mocha": "^2.2.0"
   },
   "scripts": {
     "coverage": "istanbul cover _mocha -- test/*.js",
