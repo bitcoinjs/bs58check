@@ -1,6 +1,6 @@
 {
   "name": "bs58check",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A straightforward implementation of base58-check encoding",
   "keywords": [
     "base58",
