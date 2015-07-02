@@ -1,6 +1,6 @@
 {
   "name": "bs58check",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A straightforward implementation of base58-check encoding",
   "author": "Daniel Cousens",
   "license": "MIT",
