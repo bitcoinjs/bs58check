@@ -2,6 +2,16 @@
   "name": "bs58check",
   "version": "1.0.5",
   "description": "A straightforward implementation of base58-check encoding",
+  "author": "Daniel Cousens",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcousens/bs58check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dcousens/bs58check/issues"
+  },
+  "homepage": "https://github.com/dcousens/bs58check",
   "keywords": [
     "base58",
     "base58check",
@@ -14,18 +24,6 @@
     "litecoin"
   ],
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dcousens/bs58check.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dcousens/bs58check/issues"
-  },
-  "devDependencies": {
-    "coveralls": "^2.11.0",
-    "istanbul": "^0.3.5",
-    "mocha": "^2.2.0"
-  },
   "scripts": {
     "coverage": "istanbul cover _mocha -- test/*.js",
     "coveralls": "npm run coverage && coveralls < coverage/lcov.info",
