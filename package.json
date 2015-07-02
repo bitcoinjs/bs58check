@@ -25,12 +25,16 @@
   ],
   "main": "index.js",
   "scripts": {
-    "coverage": "istanbul cover _mocha -- test/*.js",
-    "coveralls": "npm run coverage && coveralls < coverage/lcov.info",
-    "test": "istanbul test mocha -- --reporter list test/*.js"
+    "standard": "standard",
+    "test": "npm run standard && npm run unit",
+    "unit": "mocha"
   },
   "dependencies": {
     "bs58": "^2.0.1",
     "create-hash": "^1.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "standard": "*"
   }
 }
