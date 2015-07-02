@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 var base58 = require('bs58')
 var createHash = require('create-hash')
@@ -28,7 +28,7 @@ function decode (string) {
   var newChecksum = sha256x2(payload).slice(0, 4)
 
   for (var i = 0; i < newChecksum.length; ++i) {
-    if (newChecksum[i] === checksum[i]) continue;
+    if (newChecksum[i] === checksum[i]) continue
 
     throw new Error('Invalid checksum')
   }
