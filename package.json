@@ -26,15 +26,28 @@
   "main": "index.js",
   "scripts": {
     "standard": "standard",
+    "coverage": "mocha --require blanket -R travis-cov",
+    "coverage-local": "mocha --require blanket -R html-cov",
     "test": "npm run standard && npm run unit",
     "unit": "mocha"
+  },
+  "config": {
+    "blanket": {
+      "pattern": [""],
+      "data-cover-never": ["node_modules", "test"]
+    },
+    "travis-cov": {
+      "threshold": 100
+    }
   },
   "dependencies": {
     "bs58": "^2.0.1",
     "create-hash": "^1.1.0"
   },
   "devDependencies": {
+    "blanket": "*",
     "mocha": "*",
-    "standard": "*"
+    "standard": "*",
+    "travis-cov": "*"
   }
 }
