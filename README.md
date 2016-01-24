@@ -1,6 +1,6 @@
 # bs58check
 
-[![Build Status](https://travis-ci.org/dcousens/bs58check.png?branch=master)](https://travis-ci.org/dcousens/bs58check)
+[![Build Status](https://travis-ci.org/bitcoinjs/bs58check.png?branch=master)](https://travis-ci.org/bitcoinjs/bs58check)
 
 [![NPM](https://nodei.co/npm/bs58check.png)](https://nodei.co/npm/bs58check/)
 
