@@ -34,4 +34,3 @@ describe('bs58check', function () {
     })
   })
 })
-
