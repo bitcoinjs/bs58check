@@ -11,12 +11,12 @@ function sha256x2 (buffer) {
 
 // Encode a buffer as a base58-check encoded string
 function encode (payload) {
-  var checksum = sha256x2(payload).slice(0, 4)
+  var checksum = sha256x2(payload)
 
   return base58.encode(Buffer.concat([
     payload,
     checksum
-  ]))
+  ], payload.length + 4))
 }
 
 // Decode a base58-check encoded string to a buffer
