@@ -6,12 +6,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dcousens/bs58check.git"
+    "url": "https://github.com/bitcoinjs/bs58check.git"
   },
   "bugs": {
-    "url": "https://github.com/dcousens/bs58check/issues"
+    "url": "https://github.com/bitcoinjs/bs58check/issues"
   },
-  "homepage": "https://github.com/dcousens/bs58check",
+  "homepage": "https://github.com/bitcoinjs/bs58check",
   "keywords": [
     "base58",
     "base58check",
