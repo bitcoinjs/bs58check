@@ -5,8 +5,8 @@ var createHash = require('create-hash')
 
 // SHA256(SHA256(buffer))
 function sha256x2 (buffer) {
-  buffer = createHash('sha256').update(buffer).digest()
-  return createHash('sha256').update(buffer).digest()
+  var tmp = createHash('sha256').update(buffer).digest()
+  return createHash('sha256').update(tmp).digest()
 }
 
 // Encode a buffer as a base58-check encoded string
