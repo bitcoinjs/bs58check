@@ -1,6 +1,6 @@
 {
   "name": "bs58check",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A straightforward implementation of base58-check encoding",
   "author": "Daniel Cousens",
   "license": "MIT",
@@ -33,8 +33,13 @@
   },
   "config": {
     "blanket": {
-      "pattern": [""],
-      "data-cover-never": ["node_modules", "test"]
+      "pattern": [
+        ""
+      ],
+      "data-cover-never": [
+        "node_modules",
+        "test"
+      ]
     },
     "travis-cov": {
       "threshold": 100
