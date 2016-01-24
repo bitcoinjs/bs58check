@@ -27,9 +27,10 @@ function decode (string) {
   var checksum = buffer.slice(-4)
   var newChecksum = sha256x2(payload).slice(0, 4)
 
-  for (var i = 0; i < newChecksum.length; ++i) {
-    if (newChecksum[i] === checksum[i]) continue
-
+  if (checksum[0] !== newChecksum[0] ||
+      checksum[1] !== newChecksum[1] ||
+      checksum[2] !== newChecksum[2] ||
+      checksum[3] !== newChecksum[3]) {
     throw new Error('Invalid checksum')
   }
 
