@@ -1,15 +1,17 @@
 # bs58check
 
-[![Build Status](https://travis-ci.org/bitcoinjs/bs58check.png?branch=master)](https://travis-ci.org/bitcoinjs/bs58check)
+[![NPM Package](https://img.shields.io/npm/v/bs58check.svg?style=flat-square)](https://www.npmjs.org/package/bs58check)
+[![Build Status](https://img.shields.io/travis/bitcoinjs/bs58check.svg?branch=master&style=flat-square)](https://travis-ci.org/bitcoinjs/bs58check)
+[![Dependency status](https://img.shields.io/david/bitcoinjs/bs58check.svg?style=flat-square)](https://david-dm.org/bitcoinjs/bs58check#info=dependencies)
 
-[![NPM](https://nodei.co/npm/bs58check.png)](https://nodei.co/npm/bs58check/)
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 A straight forward implementation of base58check extending upon bs58.
 
 
 ## Example
 
-``` javascript
+```javascript
 var bs58check = require('bs58check')
 
 var decoded = bs58check.decode('5Kd3NBUAdUnhyzenEwVLy9pBKxSwXvE9FMPyR4UKZvpe6E3AgLr')
