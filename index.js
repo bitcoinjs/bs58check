@@ -4,12 +4,8 @@ var cryptoHash = require('crypto-hashing')
 
 // Encode a buffer as a base58-check encoded string
 function encode (payload) {
-  var checksum = cryptoHash('hash256', payload)
-
-  return base58.encode(Buffer.concat([
-    payload,
-    checksum
-  ], payload.length + 4))
+  var checksum = cryptoHash('hash256', payload).slice(0, 4)
+  return base58.encode(Buffer.concat([ payload, checksum ]))
 }
 
 // Decode a base58-check encoded string to a buffer
