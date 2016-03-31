@@ -2,16 +2,6 @@
   "name": "bs58check",
   "version": "1.0.8",
   "description": "A straightforward implementation of base58-check encoding",
-  "author": "Daniel Cousens",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bitcoinjs/bs58check.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bitcoinjs/bs58check/issues"
-  },
-  "homepage": "https://github.com/bitcoinjs/bs58check",
   "keywords": [
     "base58",
     "base58check",
@@ -23,36 +13,34 @@
     "encoding",
     "litecoin"
   ],
+  "homepage": "https://github.com/bitcoinjs/bs58check",
+  "bugs": {
+    "url": "https://github.com/bitcoinjs/bs58check/issues"
+  },
+  "license": "MIT",
+  "author": "Daniel Cousens",
+  "files": [
+    "index.js"
+  ],
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitcoinjs/bs58check.git"
+  },
   "scripts": {
     "standard": "standard",
-    "coverage": "mocha --require blanket -R travis-cov",
-    "coverage-local": "mocha --require blanket -R html-cov",
+    "coverage": "nyc npm run unit",
+    "coverage-local": "npm run coverage && nyc report --reporter=lcov",
     "test": "npm run standard && npm run unit",
-    "unit": "mocha"
-  },
-  "config": {
-    "blanket": {
-      "pattern": [
-        ""
-      ],
-      "data-cover-never": [
-        "node_modules",
-        "test"
-      ]
-    },
-    "travis-cov": {
-      "threshold": 100
-    }
+    "unit": "tape test/*.js"
   },
   "dependencies": {
     "bs58": "^2.0.1",
     "create-hash": "^1.1.0"
   },
   "devDependencies": {
-    "blanket": "*",
-    "mocha": "*",
-    "standard": "*",
-    "travis-cov": "*"
+    "nyc": "^6.1.1",
+    "standard": "^6.0.8",
+    "tape": "^4.5.1"
   }
 }
