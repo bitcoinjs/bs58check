@@ -46,8 +46,8 @@
     }
   },
   "dependencies": {
-    "bs58": "^2.0.1",
-    "create-hash": "^1.1.0"
+    "bs58": "^3.0.0",
+    "crypto-hashing": "^1.0.0"
   },
   "devDependencies": {
     "blanket": "*",
