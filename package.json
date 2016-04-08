@@ -28,9 +28,8 @@
     "url": "https://github.com/bitcoinjs/bs58check.git"
   },
   "scripts": {
+    "coverage": "nyc --branches 100 --functions 100 --check-coverage npm run unit",
     "standard": "standard",
-    "coverage": "nyc npm run unit",
-    "coverage-local": "npm run coverage && nyc report --reporter=lcov",
     "test": "npm run standard && npm run unit",
     "unit": "tape test/*.js"
   },
