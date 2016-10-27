@@ -1,36 +1,30 @@
-/* global describe it */
-
-var assert = require('assert')
-var base58check = require('../')
-
+var bs58check = require('../')
 var fixtures = require('./fixtures')
+var tape = require('tape')
 
-describe('bs58check', function () {
-  describe('decode', function () {
-    fixtures.valid.forEach(function (f) {
-      it('can decode ' + f.string, function () {
-        var actual = base58check.decode(f.string).toString('hex')
+fixtures.valid.forEach(function (f) {
+  tape('decodes ' + f.string, function (t) {
+    t.plan(1)
+    var actual = bs58check.decode(f.string).toString('hex')
 
-        assert.equal(actual, f.payload)
-      })
-    })
-
-    fixtures.invalid.forEach(function (f) {
-      it('throws on ' + f, function () {
-        assert.throws(function () {
-          base58check.decode(f)
-        }, /Invalid checksum/)
-      })
-    })
+    t.equal(actual, f.payload)
   })
+})
 
-  describe('encode', function () {
-    fixtures.valid.forEach(function (f) {
-      it('can encode ' + f.string, function () {
-        var actual = base58check.encode(new Buffer(f.payload, 'hex'))
+fixtures.invalid.forEach(function (f) {
+  tape('decode throws on ' + f, function (t) {
+    t.plan(1)
+    t.throws(function () {
+      bs58check.decode(f)
+    }, /Invalid checksum/)
+  })
+})
 
-        assert.strictEqual(actual, f.string)
-      })
-    })
+fixtures.valid.forEach(function (f) {
+  tape('encodes ' + f.string, function (t) {
+    t.plan(1)
+    var actual = bs58check.encode(new Buffer(f.payload, 'hex'))
+
+    t.equal(actual, f.string)
   })
 })

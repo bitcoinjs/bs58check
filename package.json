@@ -13,10 +13,13 @@
   },
   "homepage": "https://github.com/bitcoinjs/bs58check",
   "keywords": [
+    "base",
     "base58",
     "base58check",
     "bitcoin",
     "bs58",
+    "check",
+    "checksum",
     "decode",
     "decoding",
     "encode",
@@ -25,34 +28,19 @@
   ],
   "main": "index.js",
   "scripts": {
+    "coverage-report": "nyc report --reporter=lcov",
+    "coverage": "nyc --check-coverage --branches 90 --functions 90 npm run unit",
     "standard": "standard",
-    "coverage": "mocha --require blanket -R travis-cov",
-    "coverage-local": "mocha --require blanket -R html-cov",
-    "test": "npm run standard && npm run unit",
-    "unit": "mocha"
-  },
-  "config": {
-    "blanket": {
-      "pattern": [
-        ""
-      ],
-      "data-cover-never": [
-        "node_modules",
-        "test"
-      ]
-    },
-    "travis-cov": {
-      "threshold": 100
-    }
+    "test": "npm run standard && npm run coverage",
+    "unit": "tape test/*.js"
   },
   "dependencies": {
     "bs58": "^2.0.1",
     "create-hash": "^1.1.0"
   },
   "devDependencies": {
-    "blanket": "*",
-    "mocha": "*",
+    "nyc": "^6.4.0",
     "standard": "*",
-    "travis-cov": "*"
+    "tape": "^4.6.2"
   }
 }
