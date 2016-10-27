@@ -1,33 +1,30 @@
-var test = require('tape').test
-var base58check = require('../')
-
+var bs58check = require('../')
 var fixtures = require('./fixtures')
+var tape = require('tape')
 
-test('decode', function (t) {
-  fixtures.valid.forEach(function (f) {
-    t.test('can decode ' + f.string, function (t) {
-      t.same(base58check.decode(f.string).toString('hex'), f.payload)
-      t.end()
-    })
+fixtures.valid.forEach(function (f) {
+  tape('decodes ' + f.string, function (t) {
+    t.plan(1)
+    var actual = bs58check.decode(f.string).toString('hex')
+
+    t.equal(actual, f.payload)
   })
-
-  fixtures.invalid.forEach(function (f) {
-    t.test('throws on ' + f, function (t) {
-      t.throws(function () {
-        base58check.decode(f)
-      }, /^Error: Invalid checksum$/)
-      t.end()
-    })
-  })
-
-  t.end()
 })
 
-test('encode', function (t) {
-  fixtures.valid.forEach(function (f) {
-    t.test('can encode ' + f.string, function (t) {
-      t.same(base58check.encode(new Buffer(f.payload, 'hex')), f.string)
-      t.end()
-    })
+fixtures.invalid.forEach(function (f) {
+  tape('decode throws on ' + f, function (t) {
+    t.plan(1)
+    t.throws(function () {
+      bs58check.decode(f)
+    }, /Invalid checksum/)
+  })
+})
+
+fixtures.valid.forEach(function (f) {
+  tape('encodes ' + f.string, function (t) {
+    t.plan(1)
+    var actual = bs58check.encode(new Buffer(f.payload, 'hex'))
+
+    t.equal(actual, f.string)
   })
 })
