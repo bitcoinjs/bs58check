@@ -36,7 +36,7 @@ function decodeUnsafe (string) {
 }
 
 function decode (string) {
-  var payload = decodeRaw(string)
+  var payload = decodeUnsafe(string)
   if (!payload) throw new Error('Invalid checksum')
   return payload
 }
@@ -44,5 +44,8 @@ function decode (string) {
 module.exports = {
   encode: encode,
   decode: decode,
-  decodeRaw: decodeRaw
+  decodeUnsafe: decodeUnsafe,
+
+  // FIXME: remove in 2.0.0
+  decodeRaw: decodeUnsafe
 }
