@@ -20,7 +20,7 @@ function encode (payload) {
 }
 
 // Decode a base58-check encoded string to a buffer, no result if checksum is wrong
-function decodeRaw (string) {
+function decodeUnsafe (string) {
   var buffer = new Buffer(base58.decode(string))
 
   var payload = buffer.slice(0, -4)
