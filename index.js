@@ -19,10 +19,7 @@ function encode (payload) {
   ], payload.length + 4))
 }
 
-// Decode a base58-check encoded string to a buffer, no result if checksum is wrong
-function decodeUnsafe (string) {
-  var buffer = new Buffer(base58.decode(string))
-
+function decodeRaw (buffer) {
   var payload = buffer.slice(0, -4)
   var checksum = buffer.slice(-4)
   var newChecksum = sha256x2(payload)
@@ -35,8 +32,19 @@ function decodeUnsafe (string) {
   return payload
 }
 
+// Decode a base58-check encoded string to a buffer, no result if checksum is wrong
+function decodeUnsafe (string) {
+  var array = base58.decodeUnsafe(string)
+  if (!array) return
+
+  var buffer = new Buffer(array)
+  return decodeRaw(buffer)
+}
+
 function decode (string) {
-  var payload = decodeUnsafe(string)
+  var array = base58.decode(string)
+  var buffer = new Buffer(array)
+  var payload = decodeRaw(buffer)
   if (!payload) throw new Error('Invalid checksum')
   return payload
 }

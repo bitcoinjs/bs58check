@@ -38,7 +38,7 @@
     "unit": "tape test/*.js"
   },
   "dependencies": {
-    "bs58": "^2.0.1",
+    "bs58": "^3.1.0",
     "create-hash": "^1.1.0"
   },
   "devDependencies": {
