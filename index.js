@@ -34,16 +34,14 @@ function decodeRaw (buffer) {
 
 // Decode a base58-check encoded string to a buffer, no result if checksum is wrong
 function decodeUnsafe (string) {
-  var array = base58.decodeUnsafe(string)
-  if (!array) return
+  var buffer = base58.decodeUnsafe(string)
+  if (!buffer) return
 
-  var buffer = new Buffer(array)
   return decodeRaw(buffer)
 }
 
 function decode (string) {
-  var array = base58.decode(string)
-  var buffer = new Buffer(array)
+  var buffer = base58.decode(string)
   var payload = decodeRaw(buffer)
   if (!payload) throw new Error('Invalid checksum')
   return payload
