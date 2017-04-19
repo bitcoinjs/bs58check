@@ -50,8 +50,5 @@ function decode (string) {
 module.exports = {
   encode: encode,
   decode: decode,
-  decodeUnsafe: decodeUnsafe,
-
-  // FIXME: remove in 2.0.0
-  decodeRaw: decodeUnsafe
+  decodeUnsafe: decodeUnsafe
 }
