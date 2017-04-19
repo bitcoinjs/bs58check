@@ -24,6 +24,4 @@ console.log(bs58check.encode(decoded))
 ```
 
 
-## License
-
-This library is free and open-source software released under the MIT license.
+## LICSENSE [MIT](LICENSE)
