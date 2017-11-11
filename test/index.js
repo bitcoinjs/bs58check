@@ -1,6 +1,7 @@
 var bs58check = require('../')
 var fixtures = require('./fixtures')
 var tape = require('tape')
+var Buffer = require('safe-buffer').Buffer
 
 fixtures.valid.forEach(function (f) {
   tape('decodes ' + f.string, function (t) {
@@ -28,7 +29,7 @@ fixtures.invalid.forEach(function (f) {
 fixtures.valid.forEach(function (f) {
   tape('encodes ' + f.string, function (t) {
     t.plan(1)
-    var actual = bs58check.encode(new Buffer(f.payload, 'hex'))
+    var actual = bs58check.encode(Buffer.from(f.payload, 'hex'))
 
     t.equal(actual, f.string)
   })

@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "nyc": "^11.3.0",
+    "safe-buffer": "^5.1.1",
     "standard": "^10.0.3",
     "tape": "^4.6.2"
   }
