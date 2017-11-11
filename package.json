@@ -42,8 +42,8 @@
     "create-hash": "^1.1.0"
   },
   "devDependencies": {
-    "nyc": "^6.4.0",
-    "standard": "^9.0.0",
+    "nyc": "^11.3.0",
+    "standard": "^10.0.3",
     "tape": "^4.6.2"
   }
 }
