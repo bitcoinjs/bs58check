@@ -42,6 +42,7 @@
     "create-hash": "^1.1.0"
   },
   "devDependencies": {
+    "blake-hash": "^1.0.0",
     "nyc": "^11.3.0",
     "safe-buffer": "^5.1.1",
     "standard": "^10.0.3",
