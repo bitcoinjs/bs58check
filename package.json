@@ -23,7 +23,8 @@
   "license": "MIT",
   "author": "Daniel Cousens",
   "files": [
-    "index.js"
+    "index.js",
+    "base.js"
   ],
   "main": "index.js",
   "repository": {
