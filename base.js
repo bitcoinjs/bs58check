@@ -1,6 +1,7 @@
 'use strict'
 
 var base58 = require('bs58')
+var Buffer = require('safe-buffer').Buffer
 
 module.exports = function (checksumFn) {
   // Encode a buffer as a base58-check encoded string
