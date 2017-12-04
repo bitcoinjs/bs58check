@@ -7,7 +7,6 @@ fixtures.valid.forEach(function (f) {
   tape('decodes ' + f.string, function (t) {
     t.plan(2)
     var actual = bs58check.decode(f.string).toString('hex')
-
     t.equal(actual, f.payload)
 
     actual = bs58check.decodeUnsafe(f.string).toString('hex')
@@ -16,13 +15,13 @@ fixtures.valid.forEach(function (f) {
 })
 
 fixtures.invalid.forEach(function (f) {
-  tape('decode throws on ' + f, function (t) {
+  tape('decode throws on ' + f.string, function (t) {
     t.plan(2)
     t.throws(function () {
-      bs58check.decode(f)
-    }, /Invalid checksum/)
+      bs58check.decode(f.string)
+    }, new RegExp(f.exception))
 
-    t.equal(bs58check.decodeUnsafe(f), undefined)
+    t.equal(bs58check.decodeUnsafe(f.string), undefined)
   })
 })
 
