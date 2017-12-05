@@ -202,8 +202,21 @@
     }
   ],
   "invalid": [
-    "Z9inZq4e2HGQRZQezDjFMmqgUE8NwMRok",
-    "3HK7MezAm6qEZQUMPRf8jX7wDv6zig6Ky8",
-    "3AW8j12DUk8mgA7kkfZ1BrrzCVFuH1LsXS"
+    {
+      "string": "Z9inZq4e2HGQRZQezDjFMmqgUE8NwMRok",
+      "exception": "Invalid checksum"
+    },
+    {
+      "string": "3HK7MezAm6qEZQUMPRf8jX7wDv6zig6Ky8",
+      "exception": "Invalid checksum"
+    },
+    {
+      "string": "3AW8j12DUk8mgA7kkfZ1BrrzCVFuH1LsXS",
+      "exception": "Invalid checksum"
+    },
+    {
+      "string": "#####",
+      "exception": "Non-base58 character"
+    }
   ]
 }
