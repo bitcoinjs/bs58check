@@ -24,4 +24,4 @@ console.log(bs58check.encode(decoded))
 ```
 
 
-## LICSENSE [MIT](LICENSE)
+## LICENSE [MIT](LICENSE)
