@@ -40,12 +40,12 @@
   },
   "dependencies": {
     "bs58": "^4.0.0",
-    "create-hash": "^1.1.0"
+    "create-hash": "^1.1.0",
+    "safe-buffer": "^5.1.2"
   },
   "devDependencies": {
     "blake-hash": "^1.0.0",
     "nyc": "^11.3.0",
-    "safe-buffer": "^5.1.1",
     "standard": "^10.0.3",
     "tape": "^4.6.2"
   }
