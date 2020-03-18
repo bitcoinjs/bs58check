@@ -45,8 +45,8 @@
   },
   "devDependencies": {
     "blake-hash": "^1.0.0",
-    "nyc": "^11.3.0",
-    "standard": "^10.0.3",
-    "tape": "^4.6.2"
+    "nyc": "^15.0.0",
+    "standard": "^14.3.3",
+    "tape": "^4.13.2"
   }
 }
