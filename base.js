@@ -43,8 +43,8 @@ module.exports = function (checksumFn) {
   }
 
   return {
-    encode: encode,
-    decode: decode,
-    decodeUnsafe: decodeUnsafe
+    encode,
+    decode,
+    decodeUnsafe
   }
 }
