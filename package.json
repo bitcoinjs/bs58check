@@ -1,6 +1,6 @@
 {
   "name": "bs58check",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A straightforward implementation of base58-check encoding",
   "keywords": [
     "base",
@@ -24,9 +24,11 @@
   "author": "Daniel Cousens",
   "files": [
     "index.js",
-    "base.js"
+    "base.js",
+    "index.d.ts"
   ],
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/bitcoinjs/bs58check.git"
