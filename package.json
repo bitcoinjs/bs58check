@@ -1,6 +1,6 @@
 {
   "name": "bs58check",
-  "version": "2.1.2",
+  "version": "3.0.0",
   "description": "A straightforward implementation of base58-check encoding",
   "keywords": [
     "base",
@@ -24,9 +24,14 @@
   "author": "Daniel Cousens",
   "files": [
     "index.js",
-    "base.js"
+    "base.js",
+    "hash.js",
+    "hash_browser.js"
   ],
   "main": "index.js",
+  "browser": {
+    "./hash.js": "./hash_browser.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bitcoinjs/bs58check.git"
@@ -39,9 +44,8 @@
     "unit": "tape test/*.js"
   },
   "dependencies": {
-    "bs58": "^4.0.0",
-    "create-hash": "^1.1.0",
-    "safe-buffer": "^5.1.2"
+    "bs58": "^5.0.0",
+    "js-sha256": "0.9.x"
   },
   "devDependencies": {
     "blake-hash": "^1.0.0",
