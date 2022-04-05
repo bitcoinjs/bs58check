@@ -6,10 +6,10 @@ var Buffer = require('safe-buffer').Buffer
 fixtures.valid.forEach(function (f) {
   tape('decodes ' + f.string, function (t) {
     t.plan(2)
-    var actual = bs58check.decode(f.string).toString('hex')
+    var actual = Buffer.from(bs58check.decode(f.string)).toString('hex')
     t.equal(actual, f.payload)
 
-    actual = bs58check.decodeUnsafe(f.string).toString('hex')
+    actual = Buffer.from(bs58check.decodeUnsafe(f.string)).toString('hex')
     t.equal(actual, f.payload)
   })
 })

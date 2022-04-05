@@ -1,22 +1,21 @@
 'use strict'
 
 var base58 = require('bs58')
-var Buffer = require('safe-buffer').Buffer
 
 module.exports = function (checksumFn) {
   // Encode a buffer as a base58-check encoded string
   function encode (payload) {
     var checksum = checksumFn(payload)
+    var buffer = new Uint8Array(payload.length + 4)
+    buffer.set(payload, 0)
+    buffer.set(checksum.subarray(0, 4), payload.length)
 
-    return base58.encode(Buffer.concat([
-      payload,
-      checksum
-    ], payload.length + 4))
+    return base58.encode(buffer)
   }
 
   function decodeRaw (buffer) {
-    var payload = buffer.slice(0, -4)
-    var checksum = buffer.slice(-4)
+    var payload = buffer.subarray(0, -4)
+    var checksum = buffer.subarray(-4)
     var newChecksum = checksumFn(payload)
 
     if (checksum[0] ^ newChecksum[0] |
