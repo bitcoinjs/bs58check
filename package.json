@@ -40,12 +40,12 @@
   },
   "dependencies": {
     "@noble/hashes": "^1.2.0",
-    "bs58": "^4.0.0",
-    "safe-buffer": "^5.1.2"
+    "bs58": "^5.0.0"
   },
   "devDependencies": {
     "blake-hash": "^1.0.0",
     "nyc": "^15.0.0",
+    "safe-buffer": "^5.1.2",
     "standard": "^14.3.3",
     "tape": "^4.13.2"
   }

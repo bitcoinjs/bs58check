@@ -1,15 +1,15 @@
 var bs58check = require('../')
 var fixtures = require('./fixtures')
 var tape = require('tape')
-var Buffer = require('safe-buffer').Buffer
+var { bytesToHex, hexToBytes } = require('@noble/hashes/utils')
 
 fixtures.valid.forEach(function (f) {
   tape('decodes ' + f.string, function (t) {
     t.plan(2)
-    var actual = bs58check.decode(f.string).toString('hex')
+    var actual = bytesToHex(bs58check.decode(f.string))
     t.equal(actual, f.payload)
 
-    actual = bs58check.decodeUnsafe(f.string).toString('hex')
+    actual = bytesToHex(bs58check.decodeUnsafe(f.string))
     t.equal(actual, f.payload)
   })
 })
@@ -28,7 +28,7 @@ fixtures.invalid.forEach(function (f) {
 fixtures.valid.forEach(function (f) {
   tape('encodes ' + f.string, function (t) {
     t.plan(1)
-    var actual = bs58check.encode(Buffer.from(f.payload, 'hex'))
+    var actual = bs58check.encode(hexToBytes(f.payload))
 
     t.equal(actual, f.string)
   })
