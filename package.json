@@ -39,8 +39,8 @@
     "unit": "tape test/*.js"
   },
   "dependencies": {
+    "@noble/hashes": "^1.2.0",
     "bs58": "^4.0.0",
-    "create-hash": "^1.1.0",
     "safe-buffer": "^5.1.2"
   },
   "devDependencies": {
