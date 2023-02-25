@@ -5,11 +5,12 @@ var base58 = require('bs58')
 module.exports = function (checksumFn) {
   // Encode a buffer as a base58-check encoded string
   function encode (payload) {
-    var checksum = checksumFn(payload)
-    var length = payload.length + 4
+    var payloadU8 = Uint8Array.from(payload)
+    var checksum = checksumFn(payloadU8)
+    var length = payloadU8.length + 4
     var both = new Uint8Array(length)
-    both.set(payload, 0)
-    both.set(checksum.subarray(0, 4), payload.length)
+    both.set(payloadU8, 0)
+    both.set(checksum.subarray(0, 4), payloadU8.length)
     return base58.encode(both, length)
   }
 

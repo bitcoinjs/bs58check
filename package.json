@@ -27,6 +27,7 @@
     "base.js"
   ],
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/bitcoinjs/bs58check.git"

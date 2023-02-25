@@ -27,9 +27,16 @@ fixtures.invalid.forEach(function (f) {
 
 fixtures.valid.forEach(function (f) {
   tape('encodes ' + f.string, function (t) {
-    t.plan(1)
-    var actual = bs58check.encode(hexToBytes(f.payload))
+    t.plan(3)
+    var u8 = hexToBytes(f.payload)
+    var array = Array.from(u8)
+    var buffer = Buffer.from(u8)
+    var actual1 = bs58check.encode(u8)
+    var actual2 = bs58check.encode(array)
+    var actual3 = bs58check.encode(buffer)
 
-    t.equal(actual, f.string)
+    t.equal(actual1, f.string)
+    t.equal(actual2, f.string)
+    t.equal(actual3, f.string)
   })
 })
