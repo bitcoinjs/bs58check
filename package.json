@@ -24,6 +24,7 @@
   "author": "Daniel Cousens",
   "files": [
     "index.js",
+    "index.d.ts",
     "base.js"
   ],
   "main": "index.js",
