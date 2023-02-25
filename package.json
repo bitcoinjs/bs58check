@@ -27,6 +27,7 @@
     "base.js"
   ],
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/bitcoinjs/bs58check.git"
@@ -39,13 +40,13 @@
     "unit": "tape test/*.js"
   },
   "dependencies": {
-    "bs58": "^4.0.0",
-    "create-hash": "^1.1.0",
-    "safe-buffer": "^5.1.2"
+    "@noble/hashes": "^1.2.0",
+    "bs58": "^5.0.0"
   },
   "devDependencies": {
     "blake-hash": "^1.0.0",
     "nyc": "^15.0.0",
+    "safe-buffer": "^5.1.2",
     "standard": "^14.3.3",
     "tape": "^4.13.2"
   }
