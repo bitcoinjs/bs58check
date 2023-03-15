@@ -37,7 +37,7 @@ module.exports = function (checksumFn) {
 
   function decode (string) {
     var buffer = base58.decode(string)
-    var payload = decodeRaw(buffer, checksumFn)
+    var payload = decodeRaw(buffer)
     if (!payload) throw new Error('Invalid checksum')
     return payload
   }
