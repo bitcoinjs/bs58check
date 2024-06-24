@@ -44,6 +44,7 @@
     "build": "npm run clean && tsc -p ./tsconfig.json && tsc -p ./tsconfig.cjs.json",
     "clean": "rimraf src",
     "gitdiff": "npm run build && git diff --exit-code",
+    "postbuild": "chmod +x ./fixup.sh && ./fixup.sh",
     "coverage-report": "c8 report --reporter=lcov",
     "coverage": "c8 --check-coverage --branches 90 --functions 90 npm run unit",
     "standard": "ts-standard --ignore test --ignore src",
@@ -52,7 +53,7 @@
   },
   "dependencies": {
     "@noble/hashes": "^1.2.0",
-    "bs58": "../bs58"
+    "bs58": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.8",

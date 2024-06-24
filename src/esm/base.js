@@ -15,6 +15,7 @@ export default function (checksumFn) {
         var payload = buffer.slice(0, -4);
         var checksum = buffer.slice(-4);
         var newChecksum = checksumFn(payload);
+        // eslint-disable-next-line
         if (checksum[0] ^ newChecksum[0] |
             checksum[1] ^ newChecksum[1] |
             checksum[2] ^ newChecksum[2] |
@@ -25,14 +26,14 @@ export default function (checksumFn) {
     // Decode a base58-check encoded string to a buffer, no result if checksum is wrong
     function decodeUnsafe(str) {
         var buffer = base58.decodeUnsafe(str);
-        if (!buffer)
+        if (buffer == null)
             return;
         return decodeRaw(buffer);
     }
     function decode(str) {
         var buffer = base58.decode(str);
         var payload = decodeRaw(buffer);
-        if (!payload)
+        if (payload == null)
             throw new Error('Invalid checksum');
         return payload;
     }
