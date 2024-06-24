@@ -6,53 +6,34 @@ on:
       - master
   pull_request:
 
-permissions:
-  contents: read
-
 jobs:
-  ##################
-  # Jobs with matrix
-  ##################
   unit:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [14, 'lts/*']
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 18
           registry-url: https://registry.npmjs.org/
-          cache: 'npm'
       - run: npm ci
       - run: npm run unit
-
-  #####################
-  # Jobs without matrix
-  #####################
-  coverage:
+  format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
-      - uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          node-version: 18
           registry-url: https://registry.npmjs.org/
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run coverage
-  standard:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2
-      - uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # v3
-        with:
-          node-version: 'lts/*'
-          registry-url: https://registry.npmjs.org/
-          cache: 'npm'
       - run: npm ci
       - run: npm run standard
+  gitdiff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run gitdiff
