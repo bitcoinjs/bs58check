@@ -1,15 +1,15 @@
-var tape = require('tape')
-var Buffer = require('safe-buffer').Buffer
-var createBlakeHash = require('blake-hash')
-var bs58checkBase = require('../base')
-var { hexToBytes } = require('@noble/hashes/utils')
+import tape from 'tape'
+import { Buffer } from 'safe-buffer'
+import createBlakeHash from 'blake-hash'
+import bs58checkBase from '../src/esm/base.js'
+import { hexToBytes } from '@noble/hashes/utils'
 
 function blake256x2 (buffer) {
   buffer = createBlakeHash('blake256').update(Buffer.from(buffer)).digest()
   return Uint8Array.from(createBlakeHash('blake256').update(buffer).digest())
 }
 
-var bs58check = bs58checkBase(blake256x2)
+const bs58check = bs58checkBase(blake256x2)
 
 tape('custom checksum function (blake256x2)', function (t) {
   const address = 'DsRLWShUQexhKE1yRdpe2kVH7fmULcEUFDk'
