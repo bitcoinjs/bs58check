@@ -1,6 +1,6 @@
 {
   "name": "bs58check",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "A straightforward implementation of base58-check encoding",
   "type": "module",
   "keywords": [
